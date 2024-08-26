@@ -1,4 +1,4 @@
 <nav>
-  <%= link_to 'Home', '/' %>
-  <%= link_to 'Contact us', new_contact_path %>
+  <%= link_to 'Home', '/', class: (request.path == '/' ? 'active' : '') %>
+  <%= link_to 'Contact us', new_contact_path, class: (request.path == new_contact_path ? 'active' : '') %>
 </nav>
