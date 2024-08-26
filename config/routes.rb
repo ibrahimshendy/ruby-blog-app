@@ -16,6 +16,6 @@ Rails.application.routes.draw do
     resources :comments, only: [:create]
   end
 
-  resource :contacts, only: [:new, :create]
+  resources :contacts, only: [:new, :create]
 
 end
