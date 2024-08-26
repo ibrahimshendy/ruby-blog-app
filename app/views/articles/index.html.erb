@@ -1,12 +1,14 @@
 <h1>Welcome to my Blog</h1>
 <p>Hi, welcome to out blog page.</p>
 
-<ul>
-  <% @articles.each do |article| %>
-    <li>
-      <%= link_to article.title, article %>
-    </li>
-  <% end %>
-</ul>
+<%= link_to "Create a Post", new_article_path %>
+<hr >
 
-<%= link_to "New Article", new_article_path %>
+<% @articles.each do |article| %>
+  <div>
+    <strong>Post : </strong> <%= article.title %>
+    <br>
+    <%= link_to 'Show post', article %>
+  </div>
+  <br>
+<% end %>

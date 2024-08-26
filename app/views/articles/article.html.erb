@@ -1,9 +1,8 @@
-<h1><%= @article.title %></h1>
+<h2><%= @article.title %></h2>
 
 <p><%= @article.body %></p>
 
-<h2>Comments</h2>
 <%= render @comments %>
 
-<h2>Add a comment:</h2>
-<%= render 'comments/create' %>
+<h4>Add a comment:</h4>
+<%= render partial: 'comments/create' %>
