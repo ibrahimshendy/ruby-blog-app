@@ -1,0 +1,40 @@
+<h3 align="center">
+  Contact us
+</h3>
+
+<% if(flash[:success]) %>
+<h4><%= flash[:success] %></h4>
+<% end %>
+<%= form_with model: @contact do |form| %>
+  <div>
+    <%= form.text_field :name, placeholder: 'Please enter your name' %>
+    <% @contact.errors.full_messages_for(:name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+  <br/>
+  <div>
+    <%= form.email_field :email, placeholder: 'Please enter your Email' %>
+    <% @contact.errors.full_messages_for(:email).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+  <br/>
+  <div>
+    <%= form.telephone_field :phone, placeholder: '+20 100000000' %>
+    <% @contact.errors.full_messages_for(:phone).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+  <br/>
+  <div>
+    <%= form.text_area :message, placeholder: 'Write your message here' %>
+    <% @contact.errors.full_messages_for(:message).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+  <br/>
+  <div>
+    <%= form.submit "Send Message" %>
+  </div>
+<% end %>
