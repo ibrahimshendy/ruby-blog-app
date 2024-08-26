@@ -3,7 +3,9 @@
 
 <% @articles.each do |article| %>
   <div>
-    <h4> & <%= link_to article.title, article %> </h4>
+    <h4 class="mb-0"> <%= link_to '& ' + article.title, article, class: 'link' %> </h4>
+    <small class="text-mute"><%= article.created_at.to_formatted_s(:nice) %></small>
+
     <div><%= article.body %></div>
   </div>
 <% end %>
