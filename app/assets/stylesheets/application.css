@@ -14,6 +14,34 @@
  *= require_self
  */
 
+body {
+    font-family: system-ui;
+}
+
+nav {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 a.active {
     background-color: #EFEFEF;
+}
+
+a {
+    text-decoration:none;
+}
+
+.footer {
+    width: auto;
+    text-align: center;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.footer ul li {
+    float: left;
+    text-decoration-line: none;
+    list-style-type: none;
+    margin-right: 26px;
 }
