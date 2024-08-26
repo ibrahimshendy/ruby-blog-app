@@ -1,0 +1,10 @@
+
+<h1 align="center"> Developer Blog </h1>
+
+<% @articles.each do |article| %>
+  <div>
+    <h3> <%= link_to article.title, article %> </h3>
+    <div><%= article.body %></div>
+  </div>
+  <br>
+<% end %>
