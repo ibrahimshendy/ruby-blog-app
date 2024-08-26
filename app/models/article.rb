@@ -1,4 +1,8 @@
 class Article < ApplicationRecord
+  include StoreLog
+
+  after_create :log_article_created
+
   has_many :comments, -> { order(created_at: :desc) }
 
   validates :title, presence: true
