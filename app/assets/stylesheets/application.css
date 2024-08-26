@@ -23,6 +23,18 @@ nav {
     margin-right: auto;
 }
 
+.mb-0 {
+    margin-bottom: 0;
+}
+
+a.link {
+  color: #5a5a5a !important;
+}
+
+.text-mute {
+    color: #8b8686;
+}
+
 a.active {
     background-color: #EFEFEF;
 }
