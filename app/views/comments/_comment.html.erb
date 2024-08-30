@@ -1,3 +1,8 @@
-<p>
-  <b>Comment:</b> <%= comment.comment %>
-</p>
+<div>
+  <b>Comment: </b>
+  <%= comment.comment %>
+  <br>
+  <small class="text-mute"><%= comment.created_at.to_formatted_s(:nice) %></small>
+</div>
+
+<br>

@@ -1,8 +1,11 @@
 <h2><%= @article.title %></h2>
+<small class="text-mute"><%= @article.created_at.to_formatted_s(:nice) %></small>
 
 <p><%= @article.body %></p>
 
-<%= render @comments %>
+<% if ! @comments.count.zero? %>
+  <%= render @comments %>
+<% end %>
 
 <h4>Add a comment:</h4>
 <%= render partial: 'comments/create' %>
