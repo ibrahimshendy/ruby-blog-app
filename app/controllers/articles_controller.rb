@@ -1,13 +1,15 @@
 class ArticlesController < ApplicationController
   def index
-    @articles = Article.latest;
+    @articles = Rails.cache.fetch("articles", expires_in: 20.seconds) do
+      Article.latest.to_a;
+    end
   end
 
   def show
-    @article = Article.find(params[:id])
-    @comment = Comment.new
+    @article  = Article.find(params[:id])
     @comments = @article.comments.where(status: 'published').all
 
+    @comment = Comment.new
     # This is the way which you can specify a custom render view
     render "article"
   end
